@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para minha princesa</title>
+  <style>
+    body {
+      background: #0d0d0d;
+      color: #e6ccff;
+      font-family: "Segoe UI", Sans-Serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #c084fc;
+    }
+    #mensagem {
+      font-size: 1.2rem;
+      max-width: 500px;
+    }
+    /* Estilo do coração animado */
+    .coracao {
+      color: #ff4da6;
+      font-size: 3rem;
+      margin-top: 20px;
+      animation: pulsar 1.2s infinite alternate;
+      user-select: none;
+    }
+    @keyframes pulsar {
+      from {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+      to {
+        transform: scale(1.3);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Amo você minha princesa. Com todo amor e carinho, dedico esse versículo a você 💖</h1>
+  <p id="mensagem"></p>
+
+  <script>
+    const texto = `Pedi, e dar-se-vos-á; buscai e encontrareis; batei, e abrir-se-vos-á." -- Mateus 7:7 <br><br>Eu pedi a Deus você, e ele me deu um presentão, que é você, pedi força e coragem para dizer no início que amava você, e ele me concedeu, e eu acredito que esse versículo representa nossa campanha minha princesa, pedimos e creio que Deus irá dar, ou seja, irá conceder a nós um casamento, a nossa união em uma só carne, e quero dizer a você, é com você que quero me casar e ter uma família linda e abençoada ❤️❤️💍💍`;
+    let i = 0;
+    let resultado = "";
+
+    function digitar() {
+      resultado += texto[i];
+      document.getElementById("mensagem").innerHTML = resultado;
+      i++;
+
+      if (i < texto.length) {
+        setTimeout(digitar, 70);
+      } else {
+        mostrarCoracao();
+      }
+    }
+
+    function mostrarCoracao() {
+      const coracao = document.createElement("div");
+      coracao.classList.add("coracao");
+      coracao.textContent = "❤️💍";
+      document.body.appendChild(coracao);
+    }
+
+    digitar();
+  </script>
+</body>
+</html>
